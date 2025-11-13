@@ -29,7 +29,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Header */
+/* Header with Nav */
 header {
   background: var(--color-primary);
   color: white;
@@ -54,63 +54,6 @@ nav a {
 
 nav a:hover {
   color: var(--color-accent4);
-}
-
-/* Banner Section */
-.banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  background: var(--color-accent4);
-  padding: 3rem 1rem;
-  text-align: center;
-  color: var(--color-accent2);
-}
-
-.banner img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  border: 5px solid var(--color-accent3);
-  margin-bottom: 1rem;
-}
-
-.banner-text {
-  max-width: 600px;
-  margin-left: 2rem;
-}
-
-.banner h2 {
-  color: #fff;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.banner p {
-  color: #f0f0f0;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.banner-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.banner-buttons .btn {
-  background: var(--color-accent3);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.banner-buttons .btn:hover {
-  background: var(--color-accent1);
 }
 
 /* Hero Section */
@@ -144,7 +87,7 @@ nav a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Sections */
+/* Main Sections */
 section {
   padding: 2rem 1rem;
   max-width: 1000px;
@@ -244,7 +187,7 @@ h2 {
   transform: scale(1.1);
 }
 
-/* Pulse */
+/* Pulse Effect */
 .pulse {
   animation: pulseEffect 1.5s infinite;
 }
@@ -267,12 +210,6 @@ footer {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .banner {
-    flex-direction: column;
-  }
-  .banner-text {
-    margin-left: 0;
-  }
   .hero h1 { font-size: 2rem; }
   .hero p { font-size: 1rem; }
   .news { display: none; }
@@ -291,23 +228,9 @@ footer {
   </nav>
 </header>
 
-<!-- Centered Banner Section -->
-<section class="banner">
-  <img src="logo.png" alt="Alnoorani Logo">
-  <div class="banner-text">
-    <h2>Welcome to Alnoorani Hospitality Services</h2>
-    <p>We specialize in providing highly skilled and reliable staff for hotels, restaurants, and hospitality businesses across Dubai and the UAE. Our team is committed to excellence, professionalism, and timely service.</p>
-    <div class="banner-buttons">
-      <a href="tel:+971566348711" class="btn call">Call Now</a>
-      <a href="mailto:alnooranihospitality@gmail.com" class="btn email">Email Us</a>
-    </div>
-  </div>
-</section>
-
-<!-- Hero Section -->
 <section class="hero">
-  <h1>Your Trusted Hospitality Partner in the UAE</h1>
-  <p>We help your business grow by providing professional, experienced, and dedicated staff tailored to your hospitality needs.</p>
+  <h1>Welcome to Alnoorani Hospitality Services</h1>
+  <p>We specialize in providing skilled hospitality staff across Dubai and the UAE. From chefs to management, we help your business thrive with reliable and professional teams.</p>
 </section>
 
 <section id="about">
@@ -328,11 +251,11 @@ footer {
   <h2>Testimonials</h2>
   <div class="testimonial">
     “Alnoorani Hospitality provided us with exceptional staff for our restaurant. Highly recommended!”  
-    <br>– Manager, Raffles Jumeirah 
+    <br>– Manager, Dubai Dine
   </div>
   <div class="testimonial">
     “Professional and efficient service. They really understand the hospitality industry.”  
-    <br>– Hotel HR, crowne plaza
+    <br>– Hotel HR, Marina Bay
   </div>
 </section>
 
@@ -356,10 +279,11 @@ footer {
 <a href="tel:+971566348711" class="floating-cta">Request Staff</a>
 
 <footer>
-  Copyright © 2025 Alnoorani
+  Copyright © 2025 Noah
 </footer>
 
 <script>
+// Pulse effect trigger
 window.addEventListener('scroll', () => {
   const button = document.querySelector('.floating-cta');
   if (window.scrollY > 150) {
@@ -371,3 +295,77 @@ window.addEventListener('scroll', () => {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
