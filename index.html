@@ -15,6 +15,7 @@
   --color-accent5: #f19c79;
 }
 
+/* General */
 * {
   margin: 0;
   padding: 0;
@@ -59,7 +60,7 @@ nav a:hover {
 /* Hero Section */
 .hero {
   height: 90vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('image.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), #c44900 url('image.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,13 +138,14 @@ h2 {
   position: fixed;
   right: 0;
   top: 30%;
-  width: 200px;
+  width: 220px;
   background: var(--color-accent3);
   color: white;
   padding: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   overflow: hidden;
+  z-index: 1000;
 }
 
 .news h3 {
@@ -157,12 +159,17 @@ h2 {
   list-style: none;
   padding: 0;
   margin: 0;
-  animation: scrollNews 8s linear infinite;
+  animation: scrollNews 20s linear infinite;
+}
+
+.news li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 @keyframes scrollNews {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-100%); }
+  100% { transform: translateY(-50%); }
 }
 
 /* Floating CTA */
@@ -212,7 +219,7 @@ footer {
 @media (max-width: 768px) {
   .hero h1 { font-size: 2rem; }
   .hero p { font-size: 1rem; }
-  .news { display: none; }
+  .news { display: block; width: 100%; right: 0; top: auto; bottom: 0; border-radius: 0; }
 }
 </style>
 </head>
@@ -251,11 +258,11 @@ footer {
   <h2>Testimonials</h2>
   <div class="testimonial">
     “Alnoorani Hospitality provided us with exceptional staff for our restaurant. Highly recommended!”  
-    <br>– Manager, crowne plaza hotel
+    <br>– Manager, Raffles Jumeirah 
   </div>
   <div class="testimonial">
     “Professional and efficient service. They really understand the hospitality industry.”  
-    <br>– Hotel HR, raffles Jumeirah 
+    <br>– Hotel HR, Crowne plaza hotel Deira 
   </div>
 </section>
 
@@ -273,6 +280,12 @@ footer {
     <li>New office in Deira open!</li>
     <li>Top-rated staffing agency in Dubai!</li>
     <li>Professional training sessions available!</li>
+    <li>Specialized staff for hotels and restaurants.</li>
+    <li>Customized recruitment solutions for businesses.</li>
+    <li>Experienced managers and supervisors available.</li>
+    <li>Reliable, timely, and professional service guaranteed.</li>
+    <li>Consultancy on hospitality operations and efficiency.</li>
+    <li>Temporary and permanent staffing solutions offered.</li>
   </ul>
 </div>
 
@@ -295,77 +308,3 @@ window.addEventListener('scroll', () => {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
