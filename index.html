@@ -1,508 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Alnoorani Hospitality Services Co.</title>
 <style>
-  :root {
-    --color-primary: #00afb9;
-    --color-secondary: #fdfcdc;
-    --color-accent1: #f07167;
-    --color-accent2: #15616d;
-    --color-accent3: #ff7d00;
-    --color-accent4: #4cc9f0;
-    --color-accent5: #f19c79;
-  }
+:root {
+  --color-primary: #00afb9;
+  --color-bg: #fdfcdc;
+  --color-accent1: #f07167;
+  --color-accent2: #15616d;
+  --color-accent3: #ff7d00;
+  --color-accent4: #4cc9f0;
+  --color-accent5: #f19c79;
+}
 
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: Arial, sans-serif; background: var(--color-secondary); color: var(--color-accent2); line-height:1.6; overflow-x:hidden;}
-  
-  header {
-    background: var(--color-primary); color:white; padding: 20px; text-align:center; position:sticky; top:0; z-index:1000;
-  }
-  header h1 { margin-bottom:10px; }
-  nav a { color:white; text-decoration:none; margin:0 10px; font-weight:bold; }
-  nav a:hover { text-decoration:underline; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
 
-  /* Hero */
-  .hero { display:flex; flex-direction:column; align-items:center; text-align:center; padding:40px 20px; background: var(--color-accent4); color:var(--color-secondary); overflow:hidden; }
-  .hero img { width:160px; height:160px; border-radius:50%; object-fit:cover; border:5px solid var(--color-accent3); margin-bottom:20px; animation: slideIn 1s ease; }
-  .hero h2 { font-size:1.8em; margin-bottom:10px; animation: fadeInUp 1.2s ease; }
-  .hero p { max-width:600px; animation: fadeInUp 1.4s ease; }
+body {
+  background: var(--color-bg);
+  color: var(--color-accent2);
+  overflow-x: hidden;
+}
 
-  @keyframes slideIn { from {transform:translateX(-200px); opacity:0;} to {transform:translateX(0); opacity:1;} }
-  @keyframes fadeInUp { from {transform:translateY(50px); opacity:0;} to {transform:translateY(0); opacity:1;} }
+/* Header with Nav */
+header {
+  background: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  .cta-buttons { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-top:20px; }
-  .cta-buttons a { background:var(--color-accent3); color:white; padding:15px 25px; text-decoration:none; border-radius:8px; transition: transform 0.3s, background 0.3s; }
-  .cta-buttons a:hover { background:var(--color-accent1); transform:scale(1.05); }
+nav {
+  margin-top: 10px;
+}
 
-  /* Sections */
-  .section { padding:50px 20px; max-width:1200px; margin:0 auto; opacity:0; transform:translateY(50px); transition: all 0.8s ease; }
-  .section.show { opacity:1; transform:translateY(0); }
-  .section h2 { text-align:center; margin-bottom:20px; }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
 
-  /* Gallery Slider */
-  .slider { position:relative; overflow:hidden; margin-top:30px; }
-  .slides { display:flex; transition: transform 0.5s ease-in-out; }
-  .slides img { min-width:100%; height:300px; object-fit:cover; border-radius:8px; }
-  .slider-buttons { position:absolute; top:50%; width:100%; display:flex; justify-content:space-between; transform:translateY(-50%); }
-  .slider-buttons button { background:var(--color-accent3); border:none; color:white; padding:10px 15px; cursor:pointer; border-radius:50%; font-size:1.2em; transition:0.3s; }
-  .slider-buttons button:hover { background:var(--color-accent1); }
+nav a:hover {
+  color: var(--color-accent4);
+}
 
-  /* Testimonials */
-  .testimonials { background:var(--color-accent5); color:white; padding:30px 20px; border-radius:8px; margin-top:20px; display:flex; flex-direction:column; gap:20px; }
-  .testimonial { font-style:italic; }
+/* Hero Section */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('image.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
 
-  /* News Scroll */
-  .news-scroll { overflow:hidden; height:200px; border-left:4px solid var(--color-accent3); padding-left:15px; position:relative; margin-top:20px; }
-  .news-scroll div { position:absolute; animation: scrollNews 15s linear infinite; display:flex; flex-direction:column; gap:15px; }
-  @keyframes scrollNews { 0% { top:100%; } 100% { top:-100%; } }
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
 
-  /* Footer */
-  footer { background:var(--color-accent2); text-align:center; padding:15px; color:white; margin-top:30px; }
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  line-height: 1.6;
+  animation: fadeIn 2s ease-in-out;
+}
 
-  /* Responsive */
-  @media(min-width:768px) {
-    .hero { flex-direction:row; text-align:left; justify-content:space-around; }
-    .hero img { margin-bottom:0; }
-    .news-scroll { width:50%; float:right; }
-    .slider img { height:400px; }
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Main Sections */
+section {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: var(--color-accent1);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Testimonials */
+.testimonial {
+  background: var(--color-accent5);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  animation: slideIn 1.2s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* News Bar */
+.news {
+  position: fixed;
+  right: 0;
+  top: 30%;
+  width: 200px;
+  background: var(--color-accent3);
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+}
+
+.news h3 {
+  background: var(--color-accent2);
+  padding: 5px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.news ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  animation: scrollNews 8s linear infinite;
+}
+
+@keyframes scrollNews {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+/* Floating CTA */
+.floating-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--color-accent3);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.floating-cta:hover {
+  background: var(--color-accent1);
+  transform: scale(1.1);
+}
+
+/* Pulse Effect */
+.pulse {
+  animation: pulseEffect 1.5s infinite;
+}
+
+@keyframes pulseEffect {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,125,0,0.4); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(255,125,0,0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,125,0,0); }
+}
+
+/* Footer */
+footer {
+  background: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .news { display: none; }
+}
 </style>
 </head>
-<body>
 
+<body>
 <header>
   <h1>Alnoorani Hospitality Services Co.</h1>
   <nav>
     <a href="#about">About</a>
-    <a href="#services">Services</a>
     <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<section class="hero" id="about">
-  <img src="image.jpg" alt="Profile Picture">
-  <div>
-    <h2>Welcome to Alnoorani Hospitality Services</h2>
-    <p>We specialize in providing highly skilled and reliable staff for hotels, restaurants, and hospitality businesses across Dubai and the UAE. Led by Nasir Ahammed, our team is committed to excellence, professionalism, and timely service.</p>
-    <div class="cta-buttons">
-      <a href="tel:+971566348711">Call Now</a>
-      <a href="mailto:alnwranihospitality@gmail.com">Email Us</a>
-    </div>
-  </div>
+<section class="hero">
+  <h1>Welcome to Alnoorani Hospitality Services</h1>
+  <p>We specialize in providing skilled hospitality staff across Dubai and the UAE. From chefs to management, we help your business thrive with reliable and professional teams.</p>
 </section>
 
-<section class="section" id="services">
-  <h2>Our Services</h2>
-  <ul>
-    <li>Trained Chefs</li>
-    <li>Housekeeping Staff</li>
-    <li>Waiters</li>
-    <li>Front Desk Professionals</li>
-    <li>Management Personnel</li>
-  </ul>
+<section id="about">
+  <h2>About Us</h2>
+  <p>At Alnoorani Hospitality Services, we connect hotels, restaurants, and hospitality businesses with qualified and trained professionals. Our team, led by Managing Director <strong>Nasir Ahammed</strong>, is committed to excellence, professionalism, and timely service.</p>
 </section>
 
-<section class="section" id="gallery">
+<section id="gallery">
   <h2>Gallery</h2>
-  <div class="slider">
-    <div class="slides">
-      <img src="image.jpg" alt="Gallery Image 1">
-      <!-- Add more images below -->
-      <!-- <img src="image2.jpg" alt="Gallery Image 2"> -->
-      <!-- <img src="image3.jpg" alt="Gallery Image 3"> -->
-    </div>
-    <div class="slider-buttons">
-      <button id="prev">&#10094;</button>
-      <button id="next">&#10095;</button>
-    </div>
+  <div class="gallery">
+    <img src="image.jpg" alt="Staff">
+    <img src="image.jpg" alt="Team">
+    <img src="image.jpg" alt="Service">
   </div>
 </section>
 
-<section class="section" id="testimonials">
+<section id="testimonials">
   <h2>Testimonials</h2>
-  <div class="testimonials">
-    <div class="testimonial">
-      "Alnoorani Hospitality Services provided excellent staff for our hotel. Highly recommended!" - Client A
-    </div>
-    <div class="testimonial">
-      "Professional and reliable team. They understand our staffing needs perfectly." - Client B
-    </div>
+  <div class="testimonial">
+    “Alnoorani Hospitality provided us with exceptional staff for our restaurant. Highly recommended!”  
+    <br>– Manager, Dubai Dine
+  </div>
+  <div class="testimonial">
+    “Professional and efficient service. They really understand the hospitality industry.”  
+    <br>– Hotel HR, Marina Bay
   </div>
 </section>
 
-<section class="section" id="news">
-  <h2>Latest News</h2>
-  <div class="news-scroll">
-    <div>
-      <p>New training program launched for housekeeping staff.</p>
-      <p>Expansion of services to additional locations in UAE.</p>
-      <p>Alnoorani Hospitality featured in Hospitality Monthly.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="contact">
+<section id="contact">
   <h2>Contact Us</h2>
-  <p>Phone: +971 56 634 8711 | +971 52 569 6939</p>
-  <p>Email: alnwranihospitality@gmail.com</p>
-  <p>Office Address: Deira, Dubai – UAE</p>
-  <div class="cta-buttons">
-    <a href="tel:+971566348711">Call Now</a>
-    <a href="mailto:alnwranihospitality@gmail.com">Email Us</a>
-  </div>
+  <p>📞 +971 56 634 8711 | +971 52 569 6939</p>
+  <p>✉ alnooranihospitality@gmail.com</p>
+  <p>📍 Deira, Dubai – UAE</p>
 </section>
+
+<div class="news">
+  <h3>Latest News</h3>
+  <ul>
+    <li>Now hiring chefs across UAE!</li>
+    <li>New office in Deira open!</li>
+    <li>Top-rated staffing agency in Dubai!</li>
+    <li>Professional training sessions available!</li>
+  </ul>
+</div>
+
+<a href="tel:+971566348711" class="floating-cta">Request Staff</a>
 
 <footer>
-  Copyright © 2025 Alnnorani
+  Copyright © 2025 Alnoorani
 </footer>
 
 <script>
-  // Scroll-trigger animation
-  const sections = document.querySelectorAll('.section');
-  window.addEventListener('scroll', () => {
-    sections.forEach(section => {
-      const top = section.getBoundingClientRect().top;
-      const trigger = window.innerHeight / 1.3;
-      if(top < trigger) section.classList.add('show');
-    });
-  });
-
-  // Slider
-  const slides = document.querySelector('.slides');
-  const images = document.querySelectorAll('.slides img');
-  let index = 0;
-
-  document.getElementById('next').addEventListener('click', () => {
-    index = (index + 1) % images.length;
-    slides.style.transform = `translateX(${-index * 100}%)`;
-  });
-
-  document.getElementById('prev').addEventListener('click', () => {
-    index = (index - 1 + images.length) % images.length;
-    slides.style.transform = `translateX(${-index * 100}%)`;
-  });
-
-  // Auto-slide
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    slides.style.transform = `translateX(${-index * 100}%)`;
-  }, 5000);
+// Pulse effect trigger
+window.addEventListener('scroll', () => {
+  const button = document.querySelector('.floating-cta');
+  if (window.scrollY > 150) {
+    button.classList.add('pulse');
+  } else {
+    button.classList.remove('pulse');
+  }
+});
 </script>
-
-<!-- Add this inside the <body> at the end, before </body> -->
-<a href="tel:+971566348711" class="floating-cta">Request Staff</a>
-
-<style>
-/* Floating CTA Button */
-.floating-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--color-accent3);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.floating-cta:hover {
-  background: var(--color-accent1);
-  transform: scale(1.1) rotate(-2deg);
-}
-</style>
-<!-- Add this inside the <body> at the end, before </body> -->
-<a href="tel:+971566348711" class="floating-cta">Request Staff</a>
-
-<style>
-/* Floating CTA Button */
-.floating-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--color-accent3);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.floating-cta:hover {
-  background: var(--color-accent1);
-  transform: scale(1.1) rotate(-2deg);
-}
-</style>
-<!-- Add this inside the <body> at the end, before </body> -->
-<a href="tel:+971566348711" class="floating-cta">Request Staff</a>
-
-<style>
-/* Floating CTA Button */
-.floating-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--color-accent3);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.floating-cta:hover {
-  background: var(--color-accent1);
-  transform: scale(1.1) rotate(-2deg);
-}
-</style>
-
-
- <!-- Add this inside the <body> at the end, before </body> -->
-<a href="tel:+971566348711" class="floating-cta">Request Staff</a>
-
-<style>
-/* Floating CTA Button */
-.floating-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--color-accent3);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.floating-cta:hover {
-  background: var(--color-accent1);
-  transform: scale(1.1) rotate(-2deg);
-}
-</style>
- <!-- Add this inside the <body> at the end, before </body> -->
-<a href="tel:+971566348711" class="floating-cta">Request Staff</a>
-
-<style>
-/* Floating CTA Button */
-.floating-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--color-accent3);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.floating-cta:hover {
-  background: var(--color-accent1);
-  transform: scale(1.1) rotate(-2deg);
-}
-</style>
-<!-- Add this inside the <body> at the end, before </body> -->
-<a href="tel:+971566348711" class="floating-cta">Request Staff</a>
-
-<style>
-/* Floating CTA Button */
-.floating-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--color-accent3);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.floating-cta:hover {
-  background: var(--color-accent1);
-  transform: scale(1.1) rotate(-2deg);
-}
-</style>
-<a href="tel:+971566348711" class="floating-cta">Request Staff</a>
-
-<style>
-/* Floating CTA Button */
-.floating-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--color-accent3);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.floating-cta:hover {
-  background: var(--color-accent1);
-  transform: scale(1.1) rotate(-2deg);
-}
-<a href="tel:+971566348711" class="floating-cta">Request Staff</a>
-
-<style>
-/* Floating CTA Button */
-.floating-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--color-accent3);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.floating-cta:hover {
-  background: var(--color-accent1);
-  transform: scale(1.1) rotate(-2deg);
-}
-</style>
-  
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
