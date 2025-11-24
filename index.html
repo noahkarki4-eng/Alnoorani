@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alnoorani Hospitality Services Co. — Staffing & Recruitment, Dubai</title>
-  <meta name="description" content="Alnoorani Hospitality Services Co. provides trained hospitality staff for hotels, restaurants, events and offices across Dubai and the UAE." />
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alnoorani Hospitality Services Co.</title>
+  <meta name="description" content="Alnoorani Hospitality Services Co. — staffing for hotels, restaurants, events across Dubai & the UAE." />
   <style>
+    /* -------------------------
+       Palette (user provided)
+       ------------------------- */
     :root{
       --cyan: #48cae4;
       --orange: #fb8500;
@@ -16,329 +18,537 @@
       --deep: #0f4c5c;
       --accent: #e36414;
 
-      --max-width: 1200px;
+      --max-width: 1400px;
       --radius: 12px;
-      --shadow: 0 10px 30px rgba(2,6,23,0.08);
+      --shadow: 0 14px 40px rgba(2,6,23,0.08);
+      --gap: 20px;
     }
 
+    /* Basic reset */
     *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; margin:0; color:var(--deep); background:var(--offwhite);}
-    a{color:var(--deep);text-decoration:none}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--deep);
+      background:var(--offwhite);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;height:auto}
 
-    .wrap{max-width:var(--max-width);margin:0 auto;padding:24px}
+    /* Full-bleed header so layout feels full screen on laptop */
+    header{
+      width:100vw;
+      left:50%;
+      right:50%;
+      margin-left:-50vw;
+      margin-right:-50vw;
+      background:linear-gradient(90deg,var(--deep),#052427);
+      color:var(--offwhite);
+      padding:18px 0;
+    }
 
-    /* Header */
-    header{background:linear-gradient(90deg,var(--deep),#052427);color:var(--offwhite);padding:18px 0}
-    .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .site-wrap{max-width:var(--max-width);margin:0 auto;padding:22px}
+
+    /* header content */
+    .top{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
     .brand{display:flex;align-items:center;gap:14px}
-    .brand img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.06)}
-    .brand .title{font-size:18px;font-weight:800;letter-spacing:0.4px}
+    .brand img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.06)}
+    .brand .title{font-weight:800;letter-spacing:0.4px}
     .brand .sub{font-size:13px;color:var(--sand)}
+    .contact-mini{font-size:14px;text-align:right;color:var(--sand)}
 
-    /* Centered menu */
+    /* Centered nav */
     nav{display:flex;justify-content:center;margin-top:14px}
-    .menu{display:flex;gap:20px;list-style:none;padding:10px 0;margin:0}
+    .menu{display:flex;gap:18px;list-style:none;padding:10px 0;margin:0}
     .menu a{color:var(--offwhite);padding:8px 12px;border-radius:8px;font-weight:700}
     .menu a:hover{background:rgba(255,255,255,0.06)}
 
-    /* Layout columns */
-    .hero{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start;margin-top:24px}
-    .hero .intro{background:#fff;padding:22px;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .hero h1{margin:0 0 8px;font-size:28px}
-    .hero p.lead{color:var(--deep);margin:0 0 14px}
-    .cta-row{display:flex;gap:12px;margin-bottom:12px}
-    .btn{padding:12px 18px;border-radius:10px;font-weight:800;border:none;cursor:pointer}
+    /* Hero & layout - two column with right vertical news */
+    main{max-width:var(--max-width);margin:28px auto;padding:0 22px}
+    .layout{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:var(--gap);
+      align-items:start;
+    }
+
+    /* make the layout full-bleed on large screens (occupy most width) */
+    @media(min-width:1200px){
+      main{width:100vw;max-width:none;padding:0 40px}
+      .site-wrap{max-width:var(--max-width);padding:0 40px}
+    }
+
+    /* left column */
+    .left{
+      display:flex;flex-direction:column;gap:18px;
+    }
+    .hero-card{
+      background:#fff;padding:28px;border-radius:var(--radius);box-shadow:var(--shadow);
+    }
+    .hero-card h1{margin:0 0 10px;font-size:32px}
+    .hero-card p.lead{margin:0 0 16px;color:#23474f}
+
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-block;padding:12px 18px;border-radius:10px;font-weight:800;border:none;cursor:pointer;
+      box-shadow:0 6px 18px rgba(2,6,23,0.06);
+    }
     .btn-primary{background:var(--cyan);color:#042b2b}
     .btn-secondary{background:transparent;border:2px solid var(--sand);color:var(--deep)}
+    .btn-accent{background:var(--accent);color:#fff}
 
-    /* Right column - news / contact */
-    .right-col{position:sticky;top:20px}
-    .contact-card{background:#fff;padding:16px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:16px}
-
-    /* Vertical news scroll */
-    .news-vertical{background:linear-gradient(180deg,var(--sand),#fff);padding:14px;border-radius:12px;height:320px;overflow:hidden;border-left:6px solid var(--deep)}
-    .news-vertical h4{margin:0 0 8px;color:var(--deep)}
-    .news-list{display:block;animation:vertScroll 12s linear infinite}
-    .news-item{padding:12px 8px;border-bottom:1px dashed rgba(0,0,0,0.06);color:var(--deep)}
-    @keyframes vertScroll{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
-
-    /* Services grid */
-    section{margin-top:28px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    /* services grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .card{background:#fff;padding:18px;border-radius:12px;box-shadow:var(--shadow)}
     .card h3{margin-top:0}
-    .services ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-    .services li{padding:8px;border-left:4px solid var(--teal);background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent);border-radius:6px}
+    .services ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .services li{padding:10px;border-left:4px solid var(--teal);border-radius:6px;background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent)}
 
-    /* Gallery */
+    /* gallery */
     .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
-    .gallery img{width:100%;height:80px;object-fit:cover;border-radius:8px}
+    .gallery img{width:100%;height:110px;object-fit:cover;border-radius:8px}
 
-    /* Testimonials with emojis */
-    .testi-wrap{margin-top:22px}
-    .testi{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .testi .box{background:linear-gradient(180deg,#fff,var(--offwhite));padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-    .emoji{font-size:20px;margin-top:8px;display:inline-block}
+    /* testimonials with emotion effects */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+    .testimonials .t{
+      background:linear-gradient(180deg,#fff,var(--offwhite));
+      padding:16px;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.06);
+      transition:transform .28s ease, box-shadow .28s ease;
+      position:relative;overflow:hidden;
+    }
+    .testimonials .t:hover{
+      transform:translateY(-6px) scale(1.02);
+      box-shadow:0 18px 40px rgba(2,6,23,0.12);
+    }
+    .t .meta{font-size:13px;color:#6b7280;margin-top:10px}
+    .emoji{
+      display:inline-block;font-size:22px;margin-top:10px;transform-origin:center;
+      transition:transform .28s ease;
+    }
+    .t:hover .emoji{transform:rotate(-8deg) scale(1.18);}
 
-    /* Forms */
-    form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    input,textarea,select{padding:10px;border:1px solid #d1d5db;border-radius:8px}
-    textarea{min-height:100px}
+    /* right column (sticky) */
+    .right{position:relative}
+    .right .contact-card{background:#fff;padding:16px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:16px}
+    .right .map{height:220px;border-radius:8px;overflow:hidden}
+
+    /* vertical news (right side) */
+    .news-vertical{
+      background:linear-gradient(180deg,var(--sand),#fff);
+      padding:12px;border-radius:12px;height:360px;overflow:hidden;border-left:6px solid var(--deep);
+      display:flex;flex-direction:column;gap:8px;
+    }
+    .news-vertical h4{margin:0 0 6px;color:var(--deep)}
+    .news-scroll{
+      display:block;
+      overflow:hidden;
+      position:relative;
+      flex:1;
+      padding-right:6px;
+    }
+    .news-list{
+      position:absolute;
+      width:100%;
+      animation:vertScroll 14s linear infinite;
+    }
+    .news-item{padding:12px 8px;border-bottom:1px dashed rgba(0,0,0,0.06);color:var(--deep);background:transparent}
+    @keyframes vertScroll{
+      0%{transform:translateY(0)}
+      100%{transform:translateY(-50%)}
+    }
+
+    /* contact forms / cf7 placeholders */
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid #d1d5db;font-size:14px}
+    textarea{min-height:110px}
     .full{grid-column:1/-1}
 
-    /* Footer */
-    footer{margin-top:40px;background:var(--deep);color:var(--offwhite);padding:20px;border-radius:10px}
-
-    /* Responsive */
+    /* center menu on small screens by keeping nav but hiding items into burger would be next step */
     @media(max-width:1000px){
       .grid{grid-template-columns:repeat(2,1fr)}
       .gallery{grid-template-columns:repeat(3,1fr)}
-      .hero{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:repeat(2,1fr)}
+      .layout{grid-template-columns:1fr}
+      .right{order:2}
+      .hero-card h1{font-size:26px}
     }
     @media(max-width:640px){
-      .menu{display:none}
-      .grid{grid-template-columns:1fr}
-      .testi{grid-template-columns:1fr}
       .gallery{grid-template-columns:repeat(2,1fr)}
-      form{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr}
+      .menu{display:none}
+      .top{flex-direction:column;align-items:flex-start}
+      .brand img{width:64px;height:64px}
     }
+
+    /* small helpers */
+    .muted{color:#6b7280;font-size:14px}
+    .center{text-align:center}
+    .divider{height:1px;background:rgba(0,0,0,0.04);margin:12px 0;border-radius:2px}
   </style>
 </head>
 <body>
 
-<div class="wrap">
-  <header>
-    <div class="top">
-      <div class="brand"><img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Alnoorani logo"/>
+  <!-- Header (full width) -->
+  <header role="banner">
+    <div class="site-wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <div class="brand" style="align-items:center">
+        <!-- developer note: using uploaded image path as local file reference -->
+        <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Alnoorani logo" />
         <div>
           <div class="title">ALNOORANI HOSPITALITY SERVICES CO.</div>
           <div class="sub">Staffing • Recruitment • Events — Deira, Dubai</div>
         </div>
       </div>
-      <div class="small">Nasir Ahammed — Managing Director<br/>+971 56 634 8711 | +971 52 569 6939</div>
+
+      <div class="contact-mini">
+        Nasir Ahammed — Managing Director<br/>
+        +971 56 634 8711 | +971 52 569 6939
+      </div>
     </div>
 
-    <nav aria-label="Main menu">
-      <ul class="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#clients">For Employers</a></li>
-        <li><a href="#careers">Careers</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- Centered menu -->
+    <nav aria-label="Main navigation" style="margin-top:14px">
+      <div class="site-wrap center">
+        <ul class="menu" role="menubar" aria-label="Main menu">
+          <li role="none"><a role="menuitem" href="#home">Home</a></li>
+          <li role="none"><a role="menuitem" href="#about">About</a></li>
+          <li role="none"><a role="menuitem" href="#services">Services</a></li>
+          <li role="none"><a role="menuitem" href="#clients">For Employers</a></li>
+          <li role="none"><a role="menuitem" href="#careers">Careers</a></li>
+          <li role="none"><a role="menuitem" href="#testimonials">Testimonials</a></li>
+          <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
-  <main id="home">
-    <div class="hero">
-      <div class="intro">
-        <h1>Trusted hospitality staffing across Dubai & the UAE</h1>
-        <p class="lead">We supply trained waitstaff, chefs, housekeeping, reception and management personnel — on demand and on time.</p>
+  <!-- Main full-width area -->
+  <main id="home" class="site-wrap" style="padding-top:28px;">
 
-        <div class="cta-row">
-          <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request Staff</button>
-          <button class="btn btn-secondary" onclick="document.getElementById('careers').scrollIntoView({behavior:'smooth'})">Apply for Job</button>
-        </div>
+    <div class="layout">
 
-        <div class="news-vertical" aria-hidden="false">
-          <h4>Quick updates</h4>
-          <div class="news-list">
-            <div class="news-item">Staff available for Ramadan & Eid events.</div>
-            <div class="news-item">New: Kitchen supervisors ready on short notice.</div>
-            <div class="news-item">Laundry attendants and cleaners added to roster.</div>
-            <div class="news-item">We now serve shopping malls and government offices.</div>
-            <!-- duplicate items to create seamless vertical loop -->
-            <div class="news-item">Staff available for Ramadan & Eid events.</div>
-            <div class="news-item">New: Kitchen supervisors ready on short notice.</div>
+      <!-- LEFT: main content -->
+      <div class="left">
+
+        <section class="hero-card" aria-labelledby="hero-heading">
+          <h1 id="hero-heading">Reliable Hospitality Staffing across Dubai & the UAE</h1>
+          <p class="lead">We provide trained waitstaff, chefs, housekeeping, front desk and management personnel. Fast deployment, flexible contracts, and a focus on service excellence.</p>
+
+          <div class="cta-row">
+            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request Staff</button>
+            <button class="btn btn-secondary" onclick="document.getElementById('careers').scrollIntoView({behavior:'smooth'})">Apply for Job</button>
+            <a class="btn btn-accent" href="#services">See Services</a>
           </div>
-        </div>
 
-        <section id="about" style="margin-top:18px">
-          <div class="card">
-            <h2>About Us</h2>
-            <p>Alnoorani Hospitality Services Co. connects hospitality businesses with skilled, reliable staff. Led by Managing Director Nasir Ahammed, our mission is to provide dependable workforce solutions that elevate service standards.</p>
-            <p><strong>Mission:</strong> Deliver dependable staffing solutions that elevate service standards. <strong>Vision:</strong> Be the leading hospitality workforce partner in the region.</p>
+          <div class="divider"></div>
+
+          <!-- About / Company profile -->
+          <div style="display:flex;gap:16px;flex-wrap:wrap">
+            <div style="flex:1;min-width:220px">
+              <h3>About Us</h3>
+              <p class="muted">Alnoorani Hospitality Services Co. connects hospitality businesses with skilled, reliable staff. Led by Managing Director Nasir Ahammed, our mission is to provide dependable workforce solutions that elevate service standards in Dubai and the UAE.</p>
+            </div>
+
+            <div style="min-width:240px">
+              <h3>Mission & Vision</h3>
+              <p class="muted"><strong>Mission:</strong> Deliver dependable staffing solutions that elevate service standards. <br/><strong>Vision:</strong> Be the leading hospitality workforce partner in the region.</p>
+            </div>
           </div>
         </section>
 
-        <section id="services" class="services">
-          <h2>Our Services</h2>
+        <!-- Services -->
+        <section id="services" class="card" aria-labelledby="services-heading">
+          <h2 id="services-heading">Our Services</h2>
           <div class="grid">
             <div class="card">
               <h3>Core Staffing</h3>
-              <ul>
-                <li>Waiters & Waitresses</li>
-                <li>Chefs & Kitchen Assistants</li>
-                <li>Housekeeping Staff</li>
-                <li>Front Desk & Reception</li>
-              </ul>
+              <div class="services">
+                <ul>
+                  <li>Waiters & Waitresses</li>
+                  <li>Chefs & Kitchen Assistants</li>
+                  <li>Housekeeping Staff</li>
+                  <li>Front Desk & Reception</li>
+                </ul>
+              </div>
             </div>
+
             <div class="card">
               <h3>Events & Facilities</h3>
-              <ul>
-                <li>Event Stewards & Banquet Staff</li>
-                <li>Public Area Cleaners</li>
-                <li>Laundry & Store Room Assistants</li>
-                <li>Private Office Support</li>
-              </ul>
+              <div class="services">
+                <ul>
+                  <li>Event Stewards & Banquet Staff</li>
+                  <li>Public Area Cleaners</li>
+                  <li>Laundry & Store Room Assistants</li>
+                  <li>Private Office Support</li>
+                </ul>
+              </div>
             </div>
+
             <div class="card">
               <h3>Management & Training</h3>
-              <ul>
-                <li>Supervisors & Shift Managers</li>
-                <li>Housekeeping Supervisors</li>
-                <li>Training & Development</li>
-                <li>Custom workforce solutions</li>
-              </ul>
+              <div class="services">
+                <ul>
+                  <li>Supervisors & Shift Managers</li>
+                  <li>Housekeeping Supervisors</li>
+                  <li>Training & Development</li>
+                  <li>Tailored workforce solutions</li>
+                </ul>
+              </div>
             </div>
           </div>
 
+          <!-- Gallery -->
           <div style="margin-top:14px">
-            <h4>Gallery</h4>
-            <div class="gallery">
-              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="gallery-1" />
-              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="gallery-2" />
-              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="gallery-3" />
-              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="gallery-4" />
+            <h3>Image Gallery</h3>
+            <div class="gallery" aria-hidden="false">
+              <!-- using uploaded image file path as placeholder image source -->
+              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="staff photo 1" />
+              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="staff photo 2" />
+              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="staff photo 3" />
+              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="staff photo 4" />
             </div>
           </div>
         </section>
 
-        <section id="clients" style="margin-top:18px">
-          <div class="card">
-            <h3>For Employers</h3>
-            <p>Flexible contracts, quick deployment and replacement guarantee. Use the staff request form below and we will match candidates to your needs.</p>
-            <div style="margin-top:10px"><a class="btn btn-primary" href="#contact">Request Staff</a></div>
+        <!-- For Employers -->
+        <section id="clients" class="card" style="margin-top:18px">
+          <h2>For Employers</h2>
+          <p class="muted">Flexible contracts, fast deployment, replacement guarantee. Submit a staff request and we will match the right candidates to your needs.</p>
+          <div style="margin-top:12px">
+            <!-- Contact Form 7 placeholder for WordPress users:
+                 Replace this demo form with: [contact-form-7 id="112" title="Staff Request"] -->
+            <form onsubmit="alert('Demo: replace with Contact Form 7 on WordPress');return false;">
+              <div class="form-row">
+                <input placeholder="Company name" required />
+                <input placeholder="Contact person" required />
+                <input placeholder="Phone / WhatsApp" required />
+                <input placeholder="Email" required />
+                <select>
+                  <option>Role required</option>
+                  <option>Waiter/Waitress</option>
+                  <option>Chef</option>
+                  <option>Housekeeping</option>
+                </select>
+                <input placeholder="Required start date" />
+              </div>
+              <textarea class="full" placeholder="Details / dates / shift"></textarea>
+              <div style="margin-top:10px"><button class="btn btn-primary">Send Staff Request</button></div>
+            </form>
           </div>
         </section>
 
-        <section id="careers" style="margin-top:18px">
-          <div class="card">
-            <h3>For Job Seekers</h3>
-            <p>Submit your CV and we will connect you with suitable hospitality roles.</p>
-            <div style="margin-top:10px"><a class="btn" style="background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px" href="#contact">Apply Now</a></div>
-          </div>
-        </section>
+        <!-- Careers / Job Seekers -->
+        <section id="careers" class="card" style="margin-top:18px">
+          <h2>For Job Seekers</h2>
+          <p class="muted">Looking for hospitality work? Apply and attach your CV — we'll connect you with employers across Dubai & the UAE.</p>
 
-        <section id="testimonials" class="testi-wrap">
-          <h2>What Clients Say</h2>
-          <div class="testi">
-            <div class="box"><p>"Professional waitstaff and excellent communication."</p><span class="emoji">😊⭐</span><div class="small" style="margin-top:8px">– Restaurant Manager</div></div>
-            <div class="box"><p>"Reliable event team. Handled a large wedding perfectly."</p><span class="emoji">🎉👏</span><div class="small" style="margin-top:8px">– Event Organizer</div></div>
-            <div class="box"><p>"Fast deployment of cleaners during peak season."</p><span class="emoji">🧹👍</span><div class="small" style="margin-top:8px">– Hotel Supervisor</div></div>
-          </div>
-        </section>
-
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <aside class="right-col">
-        <div class="contact-card">
-          <h4>Contact Details</h4>
-          <p><strong>Managing Director:</strong> Nasir Ahammed</p>
-          <p><strong>Phone:</strong> +971 56 634 8711 | +971 52 569 6939</p>
-          <p><strong>Email:</strong> alnooranihospitality@gmail.com</p>
-          <p><strong>Address:</strong> Deira, Dubai – UAE</p>
-          <h5 style="margin-top:10px">Business hours</h5>
-          <p class="small">Sun – Sat: 9:00 AM – 7:00 PM (By appointment after hours)</p>
-        </div>
-
-        <div class="news-vertical">
-          <h4>Latest News</h4>
-          <div class="news-list">
-            <div class="news-item">New staff for Ramadan & Eid events.</div>
-            <div class="news-item">Urgent restaurant staffing accepted.</div>
-            <div class="news-item">Event stewards available for hire.</div>
-            <div class="news-item">Laundry & cleaning teams now onboard.</div>
-            <div class="news-item">New contracts with shopping malls.</div>
-            <div class="news-item">New staff for Ramadan & Eid events.</div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:14px">
-          <h4>Location</h4>
-          <div class="map">
-            <iframe width="100%" height="100%" frameborder="0" style="border:0"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28874.123456789!2d55.307!3d25.271" allowfullscreen></iframe>
-          </div>
-          <p style="margin-top:10px"><a href="https://wa.me/971566348711" target="_blank">Chat on WhatsApp</a></p>
-        </div>
-
-        <div class="card" style="margin-top:14px">
-          <h4>Quick Links</h4>
-          <ul style="margin:0;padding:0;list-style:none">
-            <li><a href="#services">Our Services</a></li>
-            <li><a href="#careers">For Job Seekers</a></li>
-            <li><a href="#clients">For Employers</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-          </ul>
-        </div>
-
-      </aside>
-    </div>
-
-    <section id="contact" style="margin-top:24px">
-      <div class="card">
-        <h2>Contact & Requests</h2>
-        <p class="small">Use the forms below. If using WordPress, replace these with Contact Form 7 shortcodes shown here.</p>
-
-        <div style="margin-top:12px">
-          <h4>Staff Request (For Employers)</h4>
-          <p class="small">Short form for urgent staffing requests.</p>
-          <!-- CF7: [contact-form-7 id="112" title="Staff Request"] -->
-          <form onsubmit="alert('Demo - replace with Contact Form 7 in WordPress');return false;">
-            <input placeholder="Company name" required />
-            <input placeholder="Contact person" required />
-            <input placeholder="Phone / WhatsApp" required />
-            <input placeholder="Email" required />
-            <select><option>Role required</option><option>Waiter</option><option>Chef</option><option>Housekeeping</option></select>
-            <textarea class="full" placeholder="Details / dates / shift"></textarea>
-            <div class="full"><button class="btn btn-primary">Send Request</button></div>
-          </form>
-        </div>
-
-        <div style="margin-top:18px">
-          <h4>Job Application (For Job Seekers)</h4>
-          <p class="small">Submit CV or apply for roles.</p>
-          <!-- CF7: [contact-form-7 id="113" title="Job Application"] -->
-          <form onsubmit="alert('Demo - replace with Contact Form 7 in WordPress');return false;">
-            <input placeholder="Full name" required />
-            <input placeholder="Phone" required />
-            <input placeholder="Email" required />
-            <select><option>Position applying for</option><option>Waiter</option><option>Chef</option><option>Housekeeper</option></select>
+          <!-- Contact Form 7 placeholder:
+               Replace with: [contact-form-7 id="113" title="Job Application"] -->
+          <form onsubmit="alert('Demo: replace with Contact Form 7 on WordPress');return false;" style="margin-top:12px;">
+            <div class="form-row">
+              <input placeholder="Full name" required />
+              <input placeholder="Phone" required />
+              <input placeholder="Email" required />
+              <select>
+                <option>Position applying for</option>
+                <option>Waiter/Waitress</option>
+                <option>Chef</option>
+                <option>Housekeeping</option>
+              </select>
+              <input placeholder="Preferred location (city/area)" />
+              <input placeholder="Availability (immediate / date)" />
+            </div>
             <textarea class="full" placeholder="Brief experience / message"></textarea>
-            <div class="full"><button class="btn" style="background:var(--accent);color:#fff">Apply</button></div>
+            <div style="margin-top:10px"><button class="btn btn-accent">Submit Application</button></div>
+          </form>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" style="margin-top:18px">
+          <h2>Client Testimonials</h2>
+          <div class="testimonials" role="list">
+            <div class="t" role="listitem" aria-label="Testimonial 1">
+              <strong>“Excellent service and punctual staff.”</strong>
+              <div class="muted meta">– Restaurant Manager</div>
+              <div class="emoji" aria-hidden="true">😊 ⭐</div>
+            </div>
+
+            <div class="t" role="listitem" aria-label="Testimonial 2">
+              <strong>“Our event ran smoothly thanks to Alnoorani’s team.”</strong>
+              <div class="muted meta">– Event Organizer</div>
+              <div class="emoji" aria-hidden="true">🎉 👏</div>
+            </div>
+
+            <div class="t" role="listitem" aria-label="Testimonial 3">
+              <strong>“Fast deployment of cleaners during our peak season.”</strong>
+              <div class="muted meta">– Hotel Supervisor</div>
+              <div class="emoji" aria-hidden="true">🧹 👍</div>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /left -->
+
+      <!-- RIGHT: sticky column with vertical news -->
+      <aside class="right" aria-label="Sidebar">
+
+        <div class="right">
+          <div class="contact-card">
+            <h4 style="margin:0 0 8px">Contact Details</h4>
+            <p><strong>Managing Director:</strong> Nasir Ahammed</p>
+            <p><strong>Phone:</strong> +971 56 634 8711 | +971 52 569 6939</p>
+            <p><strong>Email:</strong> <a href="mailto:alnooranihospitality@gmail.com">alnooranihospitality@gmail.com</a></p>
+            <p><strong>Address:</strong> Deira, Dubai – UAE</p>
+            <div style="margin-top:8px" class="muted"><strong>Business hours:</strong> Sun – Sat: 9:00 AM – 7:00 PM</div>
+          </div>
+
+          <div class="news-vertical" aria-live="polite" aria-atomic="true">
+            <h4 style="margin-top:0">Latest News</h4>
+            <div class="news-scroll" id="news-scroll">
+              <div class="news-list" id="news-list">
+                <div class="news-item">New staff for Ramadan & Eid events.</div>
+                <div class="news-item">Urgent restaurant staffing accepted.</div>
+                <div class="news-item">Event stewards available for hire.</div>
+                <div class="news-item">Laundry & cleaning teams now onboard.</div>
+                <div class="news-item">New contracts with shopping malls.</div>
+
+                <!-- duplicate content for seamless loop -->
+                <div class="news-item">New staff for Ramadan & Eid events.</div>
+                <div class="news-item">Urgent restaurant staffing accepted.</div>
+                <div class="news-item">Event stewards available for hire.</div>
+                <div class="news-item">Laundry & cleaning teams now onboard.</div>
+                <div class="news-item">New contracts with shopping malls.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <h4 style="margin:0 0 8px">Location</h4>
+            <div class="map">
+              <!-- Replace with your real Maps embed in production -->
+              <iframe width="100%" height="220" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28874.123456789!2d55.307!3d25.271" allowfullscreen aria-hidden="false"></iframe>
+            </div>
+            <p style="margin-top:10px"><a href="https://wa.me/971566348711" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <h4 style="margin:0 0 8px">Quick Links</h4>
+            <ul style="list-style:none;padding:0;margin:0">
+              <li style="margin:8px 0"><a href="#services">Our Services</a></li>
+              <li style="margin:8px 0"><a href="#careers">For Job Seekers</a></li>
+              <li style="margin:8px 0"><a href="#clients">For Employers</a></li>
+              <li style="margin:8px 0"><a href="#testimonials">Testimonials</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </aside>
+
+    </div> <!-- /layout -->
+
+    <!-- Contact section placed under layout for narrow screens -->
+    <section id="contact" class="card" style="margin-top:24px">
+      <h2>Contact & Requests</h2>
+      <p class="muted">Use the forms below. If using WordPress, replace these demo forms with Contact Form 7 shortcodes shown in comments.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px">
+        <div>
+          <h4>Staff Request (For Employers)</h4>
+          <!-- WP Contact Form 7 shortcode example:
+               [contact-form-7 id="112" title="Staff Request"]
+          -->
+          <form onsubmit="alert('Demo form — replace with Contact Form 7 on WordPress');return false;">
+            <div class="form-row">
+              <input placeholder="Company name" required />
+              <input placeholder="Contact person" required />
+              <input placeholder="Phone / WhatsApp" required />
+              <input placeholder="Email" required />
+              <select><option>Role required</option><option>Waiter</option><option>Chef</option><option>Housekeeping</option></select>
+              <input placeholder="Start date (optional)" />
+            </div>
+            <textarea class="full" placeholder="Details / dates / shift"></textarea>
+            <div style="margin-top:10px"><button class="btn btn-primary">Send Staff Request</button></div>
           </form>
         </div>
 
+        <div>
+          <h4>Job Application (For Job Seekers)</h4>
+          <!-- WP Contact Form 7 shortcode example:
+               [contact-form-7 id="113" title="Job Application"]
+          -->
+          <form onsubmit="alert('Demo form — replace with Contact Form 7 on WordPress');return false;">
+            <div class="form-row">
+              <input placeholder="Full name" required />
+              <input placeholder="Phone" required />
+              <input placeholder="Email" required />
+              <select><option>Position applying for</option><option>Waiter</option><option>Chef</option><option>Housekeeper</option></select>
+              <input placeholder="Preferred location" />
+              <input placeholder="Availability" />
+            </div>
+            <textarea class="full" placeholder="Brief experience / message"></textarea>
+            <div style="margin-top:10px"><button class="btn btn-accent">Apply</button></div>
+          </form>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <footer>
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-      <div><strong>Alnoorani Hospitality Services Co.</strong><div class="small">Deira, Dubai • +971 56 634 8711</div></div>
-      <div style="display:flex;gap:12px"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
+  <!-- Footer -->
+  <footer style="padding:26px 0;margin-top:28px">
+    <div class="site-wrap center" style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+      <div style="text-align:left">
+        <strong>Alnoorani Hospitality Services Co.</strong><br/>
+        <span class="muted">Deira, Dubai • +971 56 634 8711</span>
+      </div>
+      <div style="text-align:right">
+        <div style="margin-bottom:6px">Follow us</div>
+        <div style="display:flex;gap:12px;justify-content:flex-end">
+          <a href="#" style="color:var(--deep)">Facebook</a>
+          <a href="#" style="color:var(--deep)">Instagram</a>
+          <a href="#" style="color:var(--deep)">LinkedIn</a>
+        </div>
+      </div>
     </div>
   </footer>
-</div>
 
 <script>
-  // Smooth anchors
+  // Smooth scroll for internal links
   document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){
-    e.preventDefault(); const t=document.querySelector(this.getAttribute('href')); if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
   }));
 
-  // Pause vertical scroll on hover
-  const newsList = document.querySelector('.news-list');
-  if(newsList){
-    const style = getComputedStyle(newsList);
-    document.querySelector('.news-vertical').addEventListener('mouseenter',()=> newsList.style.animationPlayState='paused');
-    document.querySelector('.news-vertical').addEventListener('mouseleave',()=> newsList.style.animationPlayState='running');
+  // Pause vertical news scroll on hover (accessibility: allow keyboard focus too)
+  const newsList = document.getElementById('news-list');
+  const newsScroll = document.getElementById('news-scroll');
+  if(newsList && newsScroll){
+    newsScroll.addEventListener('mouseenter', ()=> newsList.style.animationPlayState='paused');
+    newsScroll.addEventListener('mouseleave', ()=> newsList.style.animationPlayState='running');
+    newsScroll.addEventListener('focusin', ()=> newsList.style.animationPlayState='paused');
+    newsScroll.addEventListener('focusout', ()=> newsList.style.animationPlayState='running');
   }
+
+  // Make news-list height adapt by duplicating items dynamically if needed (ensures smooth loop)
+  (function ensureNewsLoop(){
+    try{
+      const list = document.getElementById('news-list');
+      if(!list) return;
+      const items = Array.from(list.children);
+      // if less than 5 items, duplicate to create smooth loop
+      if(items.length < 6){
+        items.forEach(it => list.appendChild(it.cloneNode(true)));
+      }
+    }catch(e){/* silent */}
+  })();
 </script>
 
 </body>
