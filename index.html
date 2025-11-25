@@ -3,73 +3,105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alnoorani Hospitality Services Co.</title>
-  <meta name="description" content="Reliable hospitality staffing for hotels, restaurants and events across Dubai & the UAE." />
+  <title>Alnoorani Hospitality Services — Staffing & Recruitment, Dubai</title>
+  <meta name="description" content="Alnoorani Hospitality Services reliable hospitality staffing for hotels, restaurants and events across Dubai & the UAE." />
   <meta name="keywords" content="hospitality staffing Dubai, hotel staff, restaurant staff, event staff, Alnoorani" />
   <meta name="author" content="Alnoorani Hospitality Services Co." />
+  <meta name="robots" content="index,follow" />
 
-  <!-- Font (works if online) -->
+  <!-- Google font (single-file uses web import, will work if online) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* ---------- Palette & resets ---------- */
     :root{
-      --c1:#48cae4; --c2:#fb8500; --c3:#eae2b7; --c4:#006d77; --c5:#1e96fc;
-      --c6:#0f4c5c; --c7:#00f5d4; --white:#ffffff; --c9:#335c67; --c10:#8338ec;
-      --c11:#2a9d8f; --c12:#c1121f; --bg:#edf6f9; --accent:#e36414;
-      --max-w:1200px; --radius:12px; --shadow: 0 14px 36px rgba(6,12,20,0.08);
+      /* full palette (user provided) */
+      --c1:#48cae4; /* cyan */
+      --c2:#fb8500; /* orange */
+      --c3:#eae2b7; /* sand */
+      --c4:#006d77; /* teal */
+      --c5:#1e96fc;
+      --c6:#0f4c5c; /* deep */
+      --c7:#00f5d4;
+      --white:#ffffff;
+      --c9:#335c67;
+      --c10:#8338ec;
+      --c11:#2a9d8f;
+      --c12:#c1121f;
+      --bg:#edf6f9;
+      --accent:#e36414;
+
+      --max-width:1600px;
+      --radius:12px;
+      --shadow: 0 12px 36px rgba(6,12,20,0.08);
     }
-    *,*::before,*::after{box-sizing:border-box}
+
+    /* base */
+    *{box-sizing:100%}
     html,body{height:100%}
     body{
-      margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      background:var(--bg); color:var(--c6); -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;line-height:1.45;
-      width:100vw;overflow-x:hidden;
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--c6);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      -webkit-tap-highlight-color: transparent;
     }
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%;height:auto}
+    a{color:inherit}
+    img{max-width:100%;display:block;height:auto}
 
-    /* ---------- Header (sticky, full width) ---------- */
+    /* sticky header full-width */
     header{
-      position:sticky;top:0;z-index:1200;width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;
-      background:linear-gradient(90deg,var(--c6),#052427);color:var(--white);box-shadow:0 8px 26px rgba(6,12,20,0.12);
+      position:sticky;top:0;z-index:1200;
+      background:linear-gradient(90deg,var(--c6), #052427);
+      color:var(--white);
+      width:100%;
+      box-shadow:0 6px 18px rgba(2,6,23,0.12);
     }
-    .site-row{max-width:var(--max-w);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .site-row{max-width:var(--max-width);margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.08)}
-    .brand .title{font-weight:800;letter-spacing:.4px}
+    .brand .txt{font-weight:700;letter-spacing:0.4px}
     .contact-mini{font-size:13px;color:var(--c3);text-align:right}
 
     /* centered menu */
     nav{background:transparent}
-    .menu-wrap{max-width:var(--max-w);margin:0 auto;padding:8px 18px;display:flex;justify-content:center}
+    .menu-wrap{max-width:var(--max-width);margin:0 auto;padding:10px 18px;display:flex;justify-content:center}
     ul.menu{list-style:none;margin:0;padding:0;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
     ul.menu li a{color:var(--white);padding:8px 12px;border-radius:8px;font-weight:600}
-    ul.menu li a:focus,ul.menu li a:hover{background:rgba(255,255,255,0.06);outline:none}
+    ul.menu li a:focus, ul.menu li a:hover{outline:none;background:rgba(255,255,255,0.06)}
 
-    /* ---------- Main layout (mobile-first) ---------- */
-    main{max-width:var(--max-w);margin:18px auto;padding:0 18px}
+    /* main layout - mobile-first */
+    main{max-width:var(--max-width);margin:18px auto;padding:0 18px}
     .layout{display:grid;grid-template-columns:1fr;gap:18px}
 
-    /* hero */
-    .hero{background:var(--white);padding:16px;border-radius:var(--radius);box-shadow:var(--shadow);display:grid;gap:12px;align-items:center}
+    /* hero card */
+    .hero{
+      background:var(--white);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);
+      display:grid;grid-template-columns:1fr;gap:14px;align-items:center;
+    }
     .hero-inner{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
-    .profile-img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--c1);box-shadow:0 10px 30px rgba(6,12,20,0.08)}
+    .profile-img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--c1);box-shadow:0 8px 24px rgba(11,22,28,0.08)}
     h1{margin:0;font-size:20px}
     .tag{color:var(--c9);margin:0;font-weight:600}
     .hero-ctas{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-    .btn{padding:10px 14px;border-radius:10px;font-weight:800;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(6,12,20,0.06)}
+
+    .btn{
+      padding:10px 16px;border-radius:10px;font-weight:700;border:none;cursor:pointer;
+      box-shadow:0 8px 24px rgba(6,12,20,0.06);
+    }
     .btn-primary{background:var(--c1);color:#042b2b}
     .btn-secondary{background:transparent;border:2px solid var(--c3);color:var(--c6)}
     .btn-accent{background:var(--c2);color:var(--white)}
 
-    /* cards, grids */
-    .card{background:var(--white);padding:14px;border-radius:10px;box-shadow:var(--shadow)}
+    /* content cards */
+    .row{display:grid;gap:16px}
+    .card{background:var(--white);padding:16px;border-radius:10px;box-shadow:var(--shadow)}
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 
-    /* services */
+    /* services list */
     .services ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
     .services li{padding:10px;border-left:4px solid var(--c4);background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent);border-radius:6px}
 
@@ -78,47 +110,58 @@
     .gallery img{height:90px;object-fit:cover;border-radius:8px;cursor:pointer;transition:transform .22s ease}
     .gallery img:hover{transform:scale(1.04)}
 
-    /* testimonials (animated) */
+    /* testimonials animated */
     .testi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .testi .box{
-      background:linear-gradient(180deg,var(--white),var(--bg));padding:14px;border-radius:10px;box-shadow:0 10px 28px rgba(6,12,20,0.06);
-      opacity:0; transform:translateY(18px) scale(.98); transition:transform .28s ease, box-shadow .28s ease; animation:fadeUp .9s ease forwards;
+      background:linear-gradient(180deg,var(--white),var(--bg));padding:14px;border-radius:10px;box-shadow:0 8px 20px rgba(6,12,20,0.06);
+      transform-origin:center;transition:transform .28s ease, box-shadow .28s ease;
+      opacity:0; transform:translateY(16px) scale(.98);
+      animation:fadeUp .9s ease forwards;
     }
-    .testi .box:nth-child(1){animation-delay:.12s}
-    .testi .box:nth-child(2){animation-delay:.32s}
+    .testi .box:nth-child(1){animation-delay:.15s}
+    .testi .box:nth-child(2){animation-delay:.35s}
     .testi .box:nth-child(3){animation-delay:.6s}
-    .testi .box:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 46px rgba(6,12,20,0.12)}
-    .emoji{display:inline-block;font-size:22px;margin-top:8px;animation:floatEmoji 3s ease-in-out infinite}
+    .testi .box:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 20px 46px rgba(6,12,20,0.12)}
+    .testi .emoji{display:inline-block;font-size:22px;margin-top:8px;animation:floatEmoji 3s ease-in-out infinite}
     @keyframes fadeUp{0%{opacity:0;transform:translateY(20px) scale(.98)}100%{opacity:1;transform:translateY(0) scale(1)}}
     @keyframes floatEmoji{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
 
-    /* action blocks (interactive) */
+    /* interactive action blocks (Staff Request / Job Seekers / Employers) */
     .actions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .action{background:linear-gradient(180deg,var(--white),#fff);padding:14px;border-radius:10px;text-align:center;border:1px solid rgba(0,0,0,0.03);transition:transform .22s ease,box-shadow .22s ease;cursor:pointer}
-    .action:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(6,12,20,0.12)}
-    .action .mood{font-size:28px;margin-bottom:6px}
-    .action .desc{font-weight:700;color:#264b4a}
+    .action{background:linear-gradient(180deg,var(--white),#fff);padding:14px;border-radius:10px;text-align:center;border:1px solid rgba(0,0,0,0.03);transition:transform .22s ease,box-shadow .22s ease}
+    .action:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(8,12,20,0.12)}
+    .action .mood{font-size:28px;display:block;margin-bottom:6px}
+    .action .desc{color:#47585a;font-weight:600}
 
-    /* right column - vertical news (desktop) */
-    .right-col{display:block}
-    .news-vertical{background:linear-gradient(180deg,var(--c3),var(--white));padding:12px;border-radius:12px;height:420px;overflow:hidden;border-left:6px solid var(--c6);display:flex;flex-direction:column}
+    /* right vertical latest news column - narrow, sticky on wide screens */
+    .right-col{
+      display:block;
+      margin-top:0;
+    }
+    .news-vertical{
+      background:linear-gradient(180deg,var(--c3),var(--white));padding:12px;border-radius:12px;height:420px;overflow:hidden;border-left:6px solid var(--c6);
+      display:flex;flex-direction:column;
+    }
     .news-vertical h4{margin:0 0 8px;color:var(--c6)}
     .news-scroll{position:relative;flex:1;overflow:hidden;padding-right:6px}
     .news-list{position:absolute;animation:scrollY 14s linear infinite;width:100%}
-    .news-item{padding:12px 6px;border-bottom:1px dashed rgba(0,0,0,0.06);color:var(--c6)}
+    .news-item{padding:12px 6px;border-bottom:1px dashed rgba(0,0,0,0.06);color:var(--c6);background:transparent}
     @keyframes scrollY{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
 
-    /* sticky CTA floating */
-    .cta-floating{position:fixed;right:18px;bottom:18px;z-index:1400;background:var(--c2);color:var(--white);padding:12px 14px;border-radius:10px;box-shadow:0 12px 36px rgba(6,12,20,0.18);cursor:pointer;border:none;font-weight:800}
+    /* sticky modal CTA button */
+    .cta-floating{
+      position:fixed;right:18px;bottom:18px;z-index:1400;
+      background:var(--c2);color:var(--white);padding:12px 14px;border-radius:10px;box-shadow:0 12px 36px rgba(6,12,20,0.18);cursor:pointer;border:none;font-weight:800;
+    }
 
-    /* map */
+    /* contact map */
     .map{width:100%;height:220px;border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,0.06)}
 
     /* footer */
     footer{background:var(--c6);color:var(--white);padding:22px;border-radius:10px;margin-top:28px}
     .footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-    /* responsive: Option B behavior (news vertical on mobile full-width) */
+    /* responsive */
     @media(min-width:980px){
       .layout{grid-template-columns:1fr 360px}
       .hero-inner{flex-direction:row;text-align:left;align-items:center;gap:18px}
@@ -127,23 +170,19 @@
       .testi{grid-template-columns:repeat(2,1fr)}
       .gallery{grid-template-columns:repeat(3,1fr)}
       .actions{grid-template-columns:repeat(2,1fr)}
-      .news-vertical{height:300px}
-      .site-row{padding:12px}
     }
     @media(max-width:640px){
       .testi{grid-template-columns:1fr}
       .gallery{grid-template-columns:repeat(2,1fr)}
       .actions{grid-template-columns:1fr}
       ul.menu{gap:12px;font-size:14px}
+      .site-row{padding:10px 12px}
       .brand img{width:64px;height:64px}
-      /* make news full-width stacked under hero (Option B) */
-      .layout{grid-template-columns:1fr}
-      .news-vertical{width:100%;height:260px;border-left:0;border-top:6px solid var(--c6)}
-      .right-col{order:2}
+      .news-vertical{position:relative;height:auto}
     }
 
     /* accessibility focus */
-    a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(72,202,228,0.22);outline-offset:3px}
+    a:focus, button:focus, input:focus, textarea:focus { outline:3px solid rgba(72,202,228,0.25); outline-offset:2px; }
   </style>
 </head>
 <body>
@@ -151,10 +190,13 @@
   <!-- STICKY HEADER -->
   <header role="banner" aria-label="Main header">
     <div class="site-row">
-      <div class="brand">
-        <!-- LOCAL LOGO PATH (replace if desired) -->
-        <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Alnoorani logo" loading="lazy">
-        <div class="title">ALNOORANI HOSPITALITY SERVICES CO.<br><span style="font-weight:600;color:var(--c3);font-size:13px">Staffing • Recruitment • Events — Deira, Dubai</span></div>
+      <div class="brand" aria-hidden="false">
+        <!-- Use your profile/logo image located in same folder. Replace the path below if needed. -->
+        <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="">
+        <div class="txt">
+          ALNOORANI HOSPITALITY SERVICES <br>
+          <span style="color:var(--c3);font-weight:600;font-size:15px">
+        </div>
       </div>
 
       <div class="contact-mini" aria-hidden="false">
@@ -163,7 +205,7 @@
       </div>
     </div>
 
-    <!-- centered navigation -->
+    <!-- centered menu -->
     <nav role="navigation" aria-label="Main menu">
       <div class="menu-wrap">
         <ul class="menu" role="menubar">
@@ -181,154 +223,160 @@
 
   <!-- MAIN -->
   <main id="home" role="main">
+
     <div class="layout">
 
-      <!-- LEFT: main content -->
+      <!-- LEFT : main content -->
       <div>
 
         <!-- HERO -->
         <section class="hero" aria-labelledby="hero-title">
           <div class="hero-inner">
-            <img class="profile-img" src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Nasir Ahammed, Managing Director" width="120" height="120">
+            <!-- profile image -->
+            <img class="profile-img" src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt= >
+
             <div>
               <h1 id="hero-title">Reliable hospitality staffing across Dubai & the UAE</h1>
-              <p class="tag">Skilled waitstaff, chefs, housekeeping, front desk and management — delivered on time.</p>
+
+
+              
 
               <div class="hero-ctas" role="region" aria-label="Primary actions">
-                <button class="btn btn-primary" onclick="document.getElementById('staffForm').scrollIntoView({behavior:'smooth'})">Request Staff</button>
-                <button class="btn btn-secondary" onclick="document.getElementById('jobForm').scrollIntoView({behavior:'smooth'})">Apply for Job</button>
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request Staff</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('careers').scrollIntoView({behavior:'smooth'})">Apply for Job</button>
                 <a class="btn btn-accent" href="#services">See Services</a>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- ABOUT -->
-        <section id="about" style="margin-top:14px">
-          <div class="card">
-            <h2>Company Profile</h2>
-            <p>Alnoorani Hospitality Services Co. connects hospitality businesses with skilled, reliable staff. We focus on quality, punctuality and client satisfaction. Based in Deira, Dubai, we serve hotels, restaurants, events, malls and corporate clients across the UAE.</p>
+        <!-- ABOUT - profile, mission, vision -->
+        <section id="about" class="row" aria-labelledby="about-heading" style="margin-top:16px">
+          <div class="card" aria-labelledby="about-heading">
+            <h2 id="about-heading">Company Profile</h2>
+            <p>Our professional event staff, banquet teams, and catering personnel bring years of experience and specialized training to every assignment. From meticulous event setup to seamless service and post-event cleanup, our teams ensure that every aspect of your occasion is executed with precision and care. We focus on delivering exceptional guest experiences, anticipating needs before they arise, and maintaining the highest standards of professionalism throughout. Whether it’s a corporate gathering, wedding, gala, or private function, our dedicated staff works tirelessly behind the scenes to make your event not only successful but memorable, allowing you to focus on your guests while we handle the details.</p>
+          </div>
 
-            <div class="two-col" style="margin-top:12px">
-              <div class="card">
-                <h3>Mission</h3>
-                <p>Deliver dependable staffing solutions that elevate service standards and support our clients’ operational needs.</p>
-              </div>
-              <div class="card">
-                <h3>Vision</h3>
-                <p>Be the leading hospitality workforce partner in the region, known for professionalism and true service excellence.</p>
-              </div>
+          <div class="two-col" style="margin-top:8px">
+            <div class="card">
+              <h3>Mission</h3>
+              <p> Our mission is to provide reliable and highly skilled staffing solutions that consistently elevate service standards across the hospitality industry. We aim to support our clients’ operational needs by supplying trained, professional personnel who understand the demands of high-quality service. Through attention to detail, timely delivery, and a commitment to excellence, we strive to create seamless staffing experiences that empower our clients to focus on their core operations while ensuring their guests receive exceptional service at every touchpoint. </p>
+            </div>
+            <div class="card">
+              <h3>Vision</h3>
+              <p> Our vision is to become the premier hospitality workforce partner in the UAE and the wider region, recognized for our unwavering professionalism, dedication, and commitment to service excellence. We aspire to set the benchmark for staffing quality by fostering long-term partnerships with our clients, understanding their unique needs, and consistently exceeding expectations. Through innovation, continuous training, and a culture of integrity, we aim to transform the way hospitality staffing is perceived, becoming the trusted choice for organizations that value reliability, skill, and a genuine passion for outstanding service. </p>
             </div>
           </div>
         </section>
 
         <!-- SERVICES -->
-        <section id="services" style="margin-top:14px">
-          <div class="card">
-            <h2>Our Services & Roles</h2>
-            <div class="grid" style="margin-top:10px">
-              <div class="card">
-                <h3>Core Staffing</h3>
-                <ul>
-                  <li>Waiters & Waitresses</li>
-                  <li>Chefs & Kitchen Assistants</li>
-                  <li>Housekeeping Staff</li>
-                  <li>Front Desk & Reception</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h3>Events & Facilities</h3>
-                <ul>
-                  <li>Event Stewards & Banquet Staff</li>
-                  <li>Public Area Cleaners</li>
-                  <li>Laundry & Store Room Assistants</li>
-                  <li>Private Office Support</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h3>Management & Training</h3>
-                <ul>
-                  <li>Supervisors & Shift Managers</li>
-                  <li>Housekeeping Supervisors</li>
-                  <li>Training & Development</li>
-                  <li>Custom workforce solutions</li>
-                </ul>
-              </div>
+        <section id="services" class="card" style="margin-top:16px">
+          <h2>Our Services & Roles</h2>
+          <div class="grid" style="margin-top:10px">
+            <div class="card">
+              <h3>Core Staffing</h3>
+              <ul>
+                <li>Waiters & Waitresses</li>
+                <li>Chefs & Kitchen Assistants</li>
+                <li>Housekeeping Staff</li>
+                <li>Front Desk & Reception</li>
+              </ul>
             </div>
 
-            <!-- interactive actions -->
-            <div style="margin-top:12px">
-              <div class="actions" role="region" aria-label="Visitor actions">
-                <div class="action" tabindex="0" role="button" onclick="document.getElementById('staffForm').scrollIntoView({behavior:'smooth'})">
-                  <div class="mood">🤝</div>
-                  <div class="desc">Staff Request</div>
-                  <div style="font-size:13px;color:#51646a;margin-top:6px">Quick matching for employers</div>
-                </div>
-                <div class="action" tabindex="0" role="button" onclick="document.getElementById('jobForm').scrollIntoView({behavior:'smooth'})">
-                  <div class="mood">🎯</div>
-                  <div class="desc">For Job Seekers</div>
-                  <div style="font-size:13px;color:#51646a;margin-top:6px">Apply and upload your CV</div>
-                </div>
-                <div class="action" tabindex="0" role="button" onclick="document.getElementById('clients').scrollIntoView({behavior:'smooth'})">
-                  <div class="mood">🏨</div>
-                  <div class="desc">For Employers</div>
-                  <div style="font-size:13px;color:#51646a;margin-top:6px">Flexible contracts & rapid deployment</div>
-                </div>
-              </div>
+            <div class="card">
+              <h3>Events & Facilities</h3>
+              <ul>
+                <li>Event Stewards & Banquet Staff</li>
+                <li>Public Area Cleaners</li>
+                <li>Laundry & Store Room Assistants</li>
+                <li>Private Office Support</li>
+              </ul>
             </div>
 
-            <!-- gallery -->
-            <div style="margin-top:14px">
-              <h3>Image Gallery</h3>
-              <div class="gallery" role="list" aria-label="Image gallery">
-                <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Gallery 1" tabindex="0" data-full="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png">
-                <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Gallery 2" tabindex="0" data-full="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png">
-                <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Gallery 3" tabindex="0" data-full="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png">
-                <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Gallery 4" tabindex="0" data-full="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png">
+            <div class="card">
+              <h3>Management & Training</h3>
+              <ul>
+                <li>Supervisors & Shift Managers</li>
+                <li>Housekeeping Supervisors</li>
+                <li>Training & Development</li>
+                <li>Custom workforce solutions</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- action blocks (interactive) -->
+          <div style="margin-top:14px">
+            <div class="actions" role="region" aria-label="Actions for visitors">
+              <div class="action" tabindex="0" aria-label="Request staff - Employers" onclick="document.getElementById('staffForm').scrollIntoView({behavior:'smooth'})">
+                <div class="mood">🤝</div>
+                <div class="desc">Staff Request</div>
+                <div style="font-size:13px;color:#51646a;margin-top:8px">Quick matching for employers</div>
               </div>
+
+              <div class="action" tabindex="0" aria-label="For job seekers" onclick="document.getElementById('careers').scrollIntoView({behavior:'smooth'})">
+                <div class="mood">🎯</div>
+                <div class="desc">For Job Seekers</div>
+                <div style="font-size:13px;color:#51646a;margin-top:8px">Apply and upload your CV</div>
+              </div>
+
+              <div class="action" tabindex="0" aria-label="For employers" onclick="document.getElementById('clients').scrollIntoView({behavior:'smooth'})">
+                <div class="mood">🏨</div>
+                <div class="desc">For Employers</div>
+                <div style="font-size:13px;color:#51646a;margin-top:8px">Flexible contracts & rapid deployment</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- gallery -->
+          <div style="margin-top:14px">
+            <h3>Image Gallery</h3>
+            <div class="gallery" role="list" aria-label="Image gallery">
+              <!-- replace with real images -->
+              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Gallery image 1" tabindex="0" data-full="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png">
+              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Gallery image 2" tabindex="0" data-full="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png">
+              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Gallery image 3" tabindex="0" data-full="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png">
+              <img src="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png" alt="Gallery image 4" tabindex="0" data-full="/mnt/data/8533c3de-fd81-4ecc-bd66-9f52e239f3e6.png">
             </div>
           </div>
         </section>
 
-        <!-- employers quick -->
-        <section id="clients" style="margin-top:14px">
+        <!-- For Employers quick -->
+        <section id="clients" style="margin-top:16px">
           <div class="card">
             <h2>For Employers</h2>
-            <p style="color:#51646a">Flexible contracts, quick deployment and replacement guarantee. Use our staff request form to get started.</p>
+            <p class="muted" style="color:#51646a">Flexible contracts, quick deployment and replacement guarantee. Use our staff request form to get started.</p>
             <div style="margin-top:10px"><button class="btn btn-primary" onclick="document.getElementById('staffForm').scrollIntoView({behavior:'smooth'})">Request Staff</button></div>
           </div>
         </section>
 
-        <!-- careers -->
-        <section id="careers" style="margin-top:14px">
+        <!-- Careers (job seekers) -->
+        <section id="careers" style="margin-top:16px">
           <div class="card">
             <h2>For Job Seekers</h2>
-            <p style="color:#51646a">Submit your CV and we'll connect you with suitable roles across Dubai & the UAE.</p>
+            <p class="muted" style="color:#51646a">Submit your CV and we'll connect you with suitable roles across Dubai & the UAE.</p>
             <div style="margin-top:10px"><button class="btn btn-accent" onclick="document.getElementById('jobForm').scrollIntoView({behavior:'smooth'})">Apply Now</button></div>
           </div>
         </section>
 
-        <!-- testimonials -->
-        <section id="testimonials" style="margin-top:14px">
+        <!-- Testimonials -->
+        <section id="testimonials" style="margin-top:16px">
           <h2>Client Testimonials</h2>
           <div class="testi" role="list">
             <div class="box" role="listitem" aria-label="Testimonial 1">
               <strong>“Professional waitstaff and excellent communication.”</strong>
-              <div style="margin-top:8px;color:#6b7c7b">– Restaurant Manager</div>
+              <div class="muted" style="margin-top:8px;color:#6b7c7b">– Restaurant Manager</div>
               <div class="emoji" aria-hidden="true">😊 ⭐</div>
             </div>
 
             <div class="box" role="listitem" aria-label="Testimonial 2">
               <strong>“Reliable event team. Handled a large wedding perfectly.”</strong>
-              <div style="margin-top:8px;color:#6b7c7b">– Event Organizer</div>
+              <div class="muted" style="margin-top:8px;color:#6b7c7b">– Event Organizer</div>
               <div class="emoji" aria-hidden="true">🎉 👏</div>
             </div>
 
             <div class="box" role="listitem" aria-label="Testimonial 3">
               <strong>“Fast deployment of cleaners during peak season.”</strong>
-              <div style="margin-top:8px;color:#6b7c7b">– Hotel Supervisor</div>
+              <div class="muted" style="margin-top:8px;color:#6b7c7b">– Hotel Supervisor</div>
               <div class="emoji" aria-hidden="true">🧹 👍</div>
             </div>
           </div>
@@ -336,12 +384,13 @@
 
       </div>
 
-      <!-- RIGHT: vertical latest news & contact (desktop) -->
+      <!-- RIGHT: news, contact, quick links (narrow column) -->
       <aside class="right-col" aria-label="Sidebar">
 
-        <!-- Latest news (vertical). On mobile this stacks below as full-width (Option B). -->
         <div class="news-vertical card" aria-live="polite" aria-atomic="true">
           <h4 style="margin:0 0 8px">Latest News</h4>
+
+          <!-- vertical auto-scrolling list -->
           <div class="news-scroll" id="news-scroll" tabindex="0" aria-label="Latest news">
             <div class="news-list" id="news-list">
               <div class="news-item">New staff available for Ramadan & Eid events.</div>
@@ -350,7 +399,7 @@
               <div class="news-item">Laundry & cleaning teams now onboard.</div>
               <div class="news-item">New contracts with shopping malls.</div>
 
-              <!-- duplicates for loop -->
+              <!-- duplicated for looping -->
               <div class="news-item">New staff available for Ramadan & Eid events.</div>
               <div class="news-item">Urgent restaurant staffing accepted.</div>
               <div class="news-item">Event stewards available for hire.</div>
@@ -360,8 +409,8 @@
           </div>
         </div>
 
-        <!-- Contact card -->
-        <div class="card" style="margin-top:12px">
+        <!-- contact card -->
+        <div class="card" style="margin-top:14px">
           <h4 style="margin:0 0 8px">Contact Details</h4>
           <p><strong>Managing Director:</strong> Nasir Ahammed</p>
           <p><strong>Phone:</strong> <a href="tel:+971566348711">+971 56 634 8711</a> | <a href="tel:+971525696939">+971 52 569 6939</a></p>
@@ -370,8 +419,8 @@
           <div style="margin-top:8px;color:#6b7c7b"><strong>Business hours:</strong> Sun–Sat 9:00 AM – 7:00 PM</div>
         </div>
 
-        <!-- Map -->
-        <div class="card" style="margin-top:12px">
+        <!-- map -->
+        <div class="card" style="margin-top:14px">
           <h4 style="margin:0 0 8px">Location</h4>
           <div class="map" aria-hidden="false">
             <iframe width="100%" height="220" frameborder="0" style="border:0"
@@ -380,7 +429,7 @@
           <p style="margin-top:8px"><a href="https://wa.me/971566348711" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
         </div>
 
-        <div class="card" style="margin-top:12px">
+        <div class="card" style="margin-top:14px">
           <h4 style="margin:0 0 8px">Quick Links</h4>
           <ul style="list-style:none;padding:0;margin:0;color:var(--c6)">
             <li style="margin:8px 0"><a href="#services">Our Services</a></li>
@@ -391,16 +440,17 @@
         </div>
 
       </aside>
+
     </div> <!-- /layout -->
 
-    <!-- Contact & forms area -->
-    <section id="contact" style="margin-top:16px" class="card">
+    <!-- Contact & forms area (full width) -->
+    <section id="contact" style="margin-top:18px" class="card">
       <h2>Contact & Requests</h2>
-      <p style="color:#51646a">Use the forms below. On WordPress replace demo forms with Contact Form 7 shortcodes (examples included in comments).</p>
+      <p style="color:#51646a">Use the forms below. If you use WordPress, replace the demo forms with Contact Form 7 shortcodes: <code>[contact-form-7 id=&quot;111&quot; title=&quot;General Contact&quot;]</code></p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px">
 
-        <!-- Staff request -->
+        <!-- Staff request (employers) -->
         <div id="staffForm">
           <h3>Staff Request (Employers)</h3>
           <!-- CF7 placeholder: [contact-form-7 id="112" title="Staff Request"] -->
@@ -411,12 +461,18 @@
               <input name="phone" aria-label="Phone or WhatsApp" placeholder="Phone / WhatsApp" required>
               <input name="email" type="email" aria-label="Email" placeholder="Email" required>
               <select name="role" aria-label="Role required">
-                <option>Role required</option><option>Waiter/Waitress</option><option>Chef</option><option>Housekeeping</option><option>Supervisor</option>
+                <option>Role required</option>
+                <option>Waiter/Waitress</option>
+                <option>Chef</option>
+                <option>Housekeeping</option>
+                <option>Supervisor</option>
               </select>
-              <input name="date" aria-label="Required start date" placeholder="Start date (optional)">
+              <input name="date" aria-label="Required start date" placeholder="Required start date (optional)">
             </div>
             <textarea name="details" class="full" placeholder="Details / dates / shift"></textarea>
-            <div style="margin-top:10px"><button type="submit" class="btn btn-primary">Send Staff Request</button></div>
+            <div style="margin-top:10px">
+              <button type="submit" class="btn btn-primary">Send Staff Request</button>
+            </div>
           </form>
         </div>
 
@@ -430,26 +486,32 @@
               <input name="phone" placeholder="Phone" required>
               <input name="email" type="email" placeholder="Email" required>
               <select name="position" aria-label="Position applying for">
-                <option>Position applying for</option><option>Waiter/Waitress</option><option>Chef</option><option>Housekeeping</option><option>Reception</option>
+                <option>Position applying for</option>
+                <option>Waiter/Waitress</option>
+                <option>Chef</option>
+                <option>Housekeeping</option>
+                <option>Reception</option>
               </select>
               <input name="location" placeholder="Preferred location (optional)">
-              <input name="availability" placeholder="Availability">
+              <input name="availability" placeholder="Availability (immediate / date)">
             </div>
 
             <label for="resume">Upload CV (optional)</label>
             <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" aria-label="Upload resume">
 
             <textarea name="message" class="full" placeholder="Brief experience / message"></textarea>
-            <div style="margin-top:10px"><button type="submit" class="btn btn-accent">Apply</button></div>
+            <div style="margin-top:10px">
+              <button type="submit" class="btn btn-accent">Apply</button>
+            </div>
           </form>
         </div>
 
       </div>
 
-      <!-- general contact -->
+      <!-- general contact form -->
       <div style="margin-top:18px">
         <h3>General Contact</h3>
-        <!-- CF7 placeholder: [contact-form-7 id="111" title="General Contact"] -->
+        <!-- CF7 example: [contact-form-7 id="111" title="General Contact"] -->
         <form onsubmit="handleGeneralContact(event)">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
             <input name="name" placeholder="Name" required>
@@ -461,31 +523,35 @@
           <div style="margin-top:10px"><button class="btn btn-primary" type="submit">Send Message</button></div>
         </form>
       </div>
+
     </section>
 
   </main>
 
-  <!-- floating CTA -->
+  <!-- sticky CTA floating -->
   <button class="cta-floating" id="openModalBtn" aria-haspopup="dialog" aria-controls="quickModal">Quick Contact</button>
 
-  <!-- quick contact modal -->
+  <!-- lightbox modal for gallery & quick contact -->
   <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,0.6);z-index:1500;align-items:center;justify-content:center;padding:18px">
-    <div style="max-width:920px;width:100%;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)">
+    <div style="max-width:920px;width:100%;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
       <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid rgba(0,0,0,0.06)">
         <strong id="lightboxTitle">Quick Contact</strong>
         <button aria-label="Close" id="lightboxClose" style="background:transparent;border:none;font-size:20px;padding:6px;cursor:pointer">✕</button>
       </div>
       <div style="padding:16px;max-height:70vh;overflow:auto">
-        <form id="quickContactForm" onsubmit="handleQuickContact(event)">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-            <input name="qname" placeholder="Your name" required>
-            <input name="qphone" placeholder="Phone or WhatsApp" required>
-            <input name="qemail" type="email" placeholder="Email">
-            <input name="qsubject" placeholder="Subject">
-          </div>
-          <textarea class="full" name="qmsg" placeholder="Message"></textarea>
-          <div style="margin-top:10px"><button class="btn btn-primary" type="submit">Send</button></div>
-        </form>
+        <div id="lightboxContent">
+          <!-- content injected by JS: either gallery image or quick contact form -->
+          <form id="quickContactForm" onsubmit="handleQuickContact(event)">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <input name="qname" placeholder="Your name" required>
+              <input name="qphone" placeholder="Phone or WhatsApp" required>
+              <input name="qemail" type="email" placeholder="Email">
+              <input name="qsubject" placeholder="Subject">
+            </div>
+            <textarea class="full" name="qmsg" placeholder="Message"></textarea>
+            <div style="margin-top:10px"><button class="btn btn-primary" type="submit">Send</button></div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -504,6 +570,7 @@
         <span style="color:var(--c3)">Deira, Dubai</span><br>
         <a href="tel:+971566348711" style="color:var(--white)">+971 56 634 8711</a> • <a href="mailto:alnooranihospitality@gmail.com" style="color:var(--white)">alnooranihospitality@gmail.com</a>
       </div>
+
       <div style="text-align:right">
         <div style="margin-bottom:8px">Follow us</div>
         <div style="display:flex;gap:12px;justify-content:flex-end">
@@ -521,7 +588,7 @@
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', function(e){
         const href = this.getAttribute('href');
-        if(!href || href === '#') return;
+        if(href === '#' || href === '') return;
         const target = document.querySelector(href);
         if(target){
           e.preventDefault();
@@ -530,19 +597,17 @@
       });
     });
 
-    /* News scroll pause on hover/focus, works on mobile too */
+    /* News scroll pause on hover/focus */
     const newsList = document.getElementById('news-list');
     const newsScroll = document.getElementById('news-scroll');
     if(newsScroll && newsList){
       newsScroll.addEventListener('mouseenter', ()=> newsList.style.animationPlayState = 'paused');
       newsScroll.addEventListener('mouseleave', ()=> newsList.style.animationPlayState = 'running');
-      newsScroll.addEventListener('touchstart', ()=> newsList.style.animationPlayState = 'paused');
-      newsScroll.addEventListener('touchend', ()=> newsList.style.animationPlayState = 'running');
       newsScroll.addEventListener('focusin', ()=> newsList.style.animationPlayState = 'paused');
       newsScroll.addEventListener('focusout', ()=> newsList.style.animationPlayState = 'running');
     }
 
-    /* gallery lightbox */
+    /* Gallery lightbox */
     const galleryImgs = document.querySelectorAll('.gallery img');
     const imgModal = document.getElementById('imgModal');
     const imgView = document.getElementById('imgView');
@@ -585,40 +650,39 @@
     lightboxClose.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
 
-    /* Quick contact */
+    /* Quick contact submit (demo) */
     function handleQuickContact(e){
       e.preventDefault();
-      alert('Quick contact sent (demo). Replace with backend or Contact Form 7 integration for production.');
+      alert('Quick contact submitted. Replace with backend or Contact Form 7 shortcode for production.');
       closeLightbox();
     }
     document.getElementById('quickContactForm').addEventListener('submit', handleQuickContact);
 
-    /* Demo form handlers (replace with server or Contact Form 7) */
+    /* Demo form handlers (replace with real submission or CF7 on WP) */
     function handleStaffRequest(e){
       e.preventDefault();
-      alert('Staff request submitted (demo). Replace with backend or Contact Form 7 in production.');
+      alert('Staff request submitted. Replace with Contact Form 7 or backend integration.');
       e.target.reset();
     }
     function handleJobApplication(e){
       e.preventDefault();
+      // basic file validation (if file attached)
       const f = document.getElementById('resume');
       if(f && f.files && f.files.length){
-        const name = f.files[0].name;
-        // basic confirmation
-        alert('Application submitted with resume: ' + name + ' (demo). Replace with backend or CF7.');
-      } else {
-        alert('Application submitted (demo). Replace with backend or CF7.');
+        const fname = f.files[0].name;
+        if(fname.length > 50) alert('Resume selected: ' + fname);
       }
+      alert('Application submitted. Replace with Contact Form 7 or backend integration.');
       e.target.reset();
     }
     function handleGeneralContact(e){
       e.preventDefault();
-      alert('Message sent (demo). Replace with backend or CF7.');
+      alert('Message sent. Replace with Contact Form 7 or backend integration.');
       e.target.reset();
     }
 
-    /* Ensure the news list has enough items for a smooth loop */
-    (function ensureNewsLoop(){
+    /* Ensure news list has enough items for smooth loop (duplicate if needed) */
+    (function ensureLoop(){
       try{
         const list = document.getElementById('news-list');
         if(!list) return;
@@ -626,7 +690,7 @@
         if(items.length < 6){
           items.forEach(i => list.appendChild(i.cloneNode(true)));
         }
-      }catch(e){}
+      }catch(err){}
     })();
 
     /* Accessibility: trap focus inside lightbox when open */
