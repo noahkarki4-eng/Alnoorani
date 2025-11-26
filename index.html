@@ -14,64 +14,11 @@
 
   <style>
 
-/* Transparent Header + Shrink + Blur */
-header{
-    position: fixed;
-    top:0;
-    width:100%;
-    z-index:9999;
-    padding:22px 0;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(6px);
-    transition:all .35s ease;
-    display:flex;
-    justify-content:center;
-}
-
-/* Shrinks + becomes solid on scroll */
-header.shrink{
-    padding:8px 0;
-    background:#0f4c5c;
-    box-shadow:0 3px 18px rgba(0,0,0,0.35);
-    backdrop-filter:none;
-}
-
-/* Menu styling */
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:32px;
-    padding:0;
-    margin:0;
-}
-
-nav ul li a{
-    color:#ffffff;
-    font-size:18px;
-    font-weight:600;
-    letter-spacing:.5px;
-    text-decoration:none;
-    transition:.3s ease;
-}
-
-/* Glow effect on hover */
-nav ul li a:hover{
-    color:#00f5d4;
-    text-shadow:0 0 10px #00f5d4;
-}
-
-/* Mobile Menu Responsive */
-@media(max-width:768px){
-    nav ul{
-        flex-direction:column;
-        gap:14px;
-        background:#0f4c5c;
-        padding:16px;
-        border-radius:6px;
-    }
-    nav ul li a{
-        font-size:16px;
-    }
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #0f4c5c;
 }
 
 
@@ -792,16 +739,6 @@ nav ul li a {
   </script>
 
 
-  <script>
-window.addEventListener("scroll", function(){
-    let header = document.querySelector("header");
-    if(window.scrollY > 60){
-        header.classList.add("shrink");
-    } else{
-        header.classList.remove("shrink");
-    }
-});
-</script>
 
 </body>
 </html>
