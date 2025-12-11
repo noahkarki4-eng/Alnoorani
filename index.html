@@ -113,63 +113,6 @@
 
 
 
-.chat-bubble {
-    position: fixed;
-    bottom: 5%;
-    right: 2%;
-    background: #ffb703;
-    padding: 10px 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    font-size: 1.5rem;
-    color: #333;
-    z-index: 9999;
-    overflow: hidden;
-    max-width: 90vw;
-    animation: floatBubble 3s ease-in-out infinite;
-    transition: transform 0.2s ease;
-}
-
-/* Slightly larger bubble on smaller screens */
-@media (max-width: 768px) {
-    .chat-bubble {
-        padding: 12px 18px;
-        font-size: 1.7rem;
-        transform: scale(1.05);
-    }
-}
-
-@media (max-width: 480px) {
-    .chat-bubble {
-        padding: 14px 20px;
-        font-size: 1.9rem;
-        transform: scale(1.1);
-    }
-}
-
-.rolling-wrapper {
-    display: inline-block;
-    white-space: nowrap;
-}
-
-.rolling-text {
-    display: inline-block;
-    white-space: nowrap;
-    animation: continuousRoll 10s linear infinite;
-}
-
-/* Continuous rolling effect */
-@keyframes continuousRoll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-/* Floating movement */
-@keyframes floatBubble {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
-}
 
 
 
@@ -862,11 +805,21 @@ nav ul li a {
 
         
 
-<!<!-- Chat Bubble -->
-<div class="chat-bubble">
-    <div class="rolling-wrapper">
-        <div class="rolling-text">Hi, how can I help you? &nbsp; Hi, how can I help you? &nbsp;</div>
-    </div>
+<!-- Chat Bubble -->
+<div style="
+    position: fixed;
+    bottom: 95px;
+    right: 20px;
+    background: #6fffe9;
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-size: 25px;
+    color: #333;
+    z-index: 9999;
+    animation: floatBubble 6s ease-in-out infinite;
+">
+    <span class="blink-text">Hi, how can I assist you today?</span>
 </div>
 
 
