@@ -14,6 +14,120 @@
 
   <style>
 
+
+    /* Blinking effect */
+.blink-text {
+    animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0.3;}
+    100% {opacity: 1;}
+}
+
+/* Floating movement */
+@keyframes floatBubble {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+
+
+
+  
+
+
+  
+
+/* Container */
+.whatsapp-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+}
+
+/* Chat Text Bubble */
+.whatsapp-text {
+  background: #ffffff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #333;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  animation: fadeSlide 0.6s ease forwards;
+}
+
+/* Animation for the text bubble */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* WhatsApp Button */
+.floating-whatsapp {
+  width: 70px;
+  height: 70px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+  animation: pulseGlow 2s infinite ease-in-out;
+  transition: transform 0.25s ease;
+}
+
+.floating-whatsapp img {
+  width: 43px;
+  height: 43px;
+}
+
+/* Pulse Glow Effect */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 14px rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 34px rgba(37, 211, 102, 1);
+  }
+  100% {
+    box-shadow: 0 0 14px rgba(37, 211, 102, 0.5);
+  }
+}
+
+/* Hover effect */
+.floating-whatsapp:hover {
+  transform: scale(1.12);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 .header-top,
 .header-main,
@@ -673,6 +787,75 @@ nav ul li a {
       </div>
     </div>
   </div>
+
+
+
+<a href="https://wa.me/+971 56 634 8711" target="_blank" class="whatsapp-btn">
+                     <img src="whatsapp.png" alt="WhatsApp"> Chat on WhatsApp
+                      </a>
+
+     
+
+           <!-- Floating WhatsApp Button with Chat Text -->
+          <div class="whatsapp-container">
+            <a href="https://wa.me/+971 56 634 8711" class="floating-whatsapp" target="_blank">
+            <img src="whatsapp.png" alt="WhatsApp">
+                     </a>
+              <div class=" whatsapp-text"> 👈Start the conversation here and take the next step forward.👉..................     </div>
+            
+          </div>
+
+
+<!-- WhatsApp Floating Button + Chat Bubble -->
+<a href="https://wa.me/+971 56 634 8711" target="_blank" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  font-size: 40px;
+  z-index: 9999;
+">
+  &#x1F4AC;
+</a>
+
+        
+
+<!-- Chat Bubble -->
+<div style="
+    position: fixed;
+    bottom: 95px;
+    right: 20px;
+    background: #ffb703;
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-size: 25px;
+    color: #333;
+    z-index: 9999;
+    animation: floatBubble 6s ease-in-out infinite;
+">
+    <span class="blink-text">Hi, how can I help you today?</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+  
 
   <!-- gallery image modal -->
   <div id="imgModal" role="dialog" aria-hidden="true" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,0.8);z-index:1600;align-items:center;justify-content:center;padding:18px">
